@@ -48,12 +48,11 @@ export default function PannellumViewer() {
 
       // เช็คว่าเป็นมือถือหรือแท็บเล็ต (iPad) หรือไม่
       const isMobileOrTablet = window.innerWidth <= 1180;
-     
-      // เลือกใช้รูปตามขนาดหน้าจอ
-      const selectedPanorama = isMobileOrTablet
-        ? '/image/Grand_Suite_1_Final-4096x2048.jpg'
-        : '/image/Grand_Suite_1_Final.jpg';          
-
+      
+      // เลือกใช้รูปตามขนาดหน้าจอ (สะกดชื่อไฟล์ให้ตรงกับใน GitHub เป๊ะๆ)
+      const selectedPanorama = isMobileOrTablet 
+        ? '/image/Grand_Suite _1_Final-4096x2048.jpg' // รูป 4K (สำหรับมือถือ/iPad)
+        : '/image/Grand_Suite _1_Final.jpg';          // รูป 16K (สำหรับคอมพิวเตอร์)
 
       viewerRef.current = window.pannellum.viewer('panorama-container', {
         type: 'equirectangular',
@@ -156,8 +155,3 @@ export default function PannellumViewer() {
     </div>
   );
 }
-
-
-
-
-
